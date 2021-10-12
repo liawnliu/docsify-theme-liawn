@@ -1,0 +1,29 @@
+{
+  "name": "docsify-theme-liawn",
+  "version": "1.0.0",
+  "description": "docsify站点式博客的应用主题",
+  "main": "index.js",
+  "scripts": {
+    "dist": "rm -rf ./dist && mkdir dist && npm run uglifyjs && npm run cleancss",
+    "uglifyjs": "uglifyjs src/theme-liawn.js -o dist/theme-liawn.min.js -c -m",
+    "cleancss": "cleancss -o dist/theme-liawn.min.css src/theme-liawn.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liawnliu/docsify-theme-liawn.git"
+  },
+  "keywords": [
+    "docsify"
+  ],
+  "author": "liawnliu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liawnliu/docsify-theme-liawn/issues"
+  },
+  "homepage": "https://github.com/liawnliu/docsify-theme-liawn#readme",
+  "dependencies": {
+    "clean-css": "^5.2.1",
+    "clean-css-cli": "^5.4.1",
+    "uglify-js": "^3.14.2"
+  }
+}
