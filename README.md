@@ -5,17 +5,16 @@
 theme-liawn.min.css样式（要先引入vue.css）：
 
 ```html
-<!-- 使用官方的主题样式vue.css -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" title="vue">
-<!-- 必须先引入vue.css然后再引入自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.0.0/dist/theme-liawn.min.css"
+<!-- 自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.css"
 type="text/css" />
 ```
 
 theme-liawn.min.js
 
 ```html
-<script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.0.0/dist/theme-liawn.min.js"></script>
+<!-- 自定义主题js 要放在所有插件的最后面 -->
+<script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.js"></script>
 ```
 
 如果引入后控制台报错，那么可以照着下面两章的内容来设置。
