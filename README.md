@@ -2,18 +2,18 @@
 
 ## 通过cdn引入来使用docsify-theme-liawn
 
-theme-liawn.min.css样式（要先引入vue.css）：
+theme-liawn.min.css：
 
 ```html
-<!-- 自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
+<!-- theme-liawn.min.css 引用地址一般是//cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.css"
 type="text/css" />
 ```
 
-theme-liawn.min.js
+theme-liawn.min.js：
 
 ```html
-<!-- 自定义主题js 要放在所有插件的最后面 -->
+<!-- theme-liawn.min.js 要放在所有插件的最后面 -->
 <script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.js"></script>
 ```
 
