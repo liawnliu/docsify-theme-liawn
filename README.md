@@ -84,9 +84,6 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- 自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.css"
-    type="text/css" />
   <!-- 网站页签图标 -->
   <link rel="shortcut icon" href="public/image/favicon.ico" type="image/x-icon" />
 </head>
@@ -150,6 +147,9 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
   <!-- 自定义主题 //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
   <script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.js"></script>
+  <!-- 自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.css"
+    type="text/css" />
 </body>
 
 </html>
