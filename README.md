@@ -18,7 +18,7 @@ theme-liawn.min.js
 <script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.0.0/dist/theme-liawn.min.js"></script>
 ```
 
-如果引入后**控制台报错**，那么可以照着**下面两章**的内容来设置。
+如果引入后控制台报错，那么可以照着下面两章的内容来设置。
 
 ## 文档项目结构和package.json
 
@@ -32,10 +32,10 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
   │   ├──book-web （博客内容，例如web部分）
   │   │       └──_sidebar.md （book-web里所有md文件组成的目录）
   │   ├──public （存放博客系统的公共资源，也可以放本地插件）
-  │   │   └──image （博客系统的公共图片资源）
-  │   │       ├──bg.png （封面背景图）
-  │   │       ├──bgPhone.png （移动端封面背景图）
-  │   │       └──favicon.ico （网站页签图标icon）
+  │   │   ├──image （博客系统的公共图片资源）
+  │   │   │   ├──bg.png （封面背景图）
+  │   │   │   └──favicon.ico （网站页签图标icon）
+  │   │   └──library （插件虽然是cdn形式，以防万一，在本地存一份）
   │   ├──_coverpage.md （博客系统的封面）
   │   ├──_navbar.md （博客系统的导航栏）
   │   ├──.nojekyll （解决名字为下划线开头的文件在GitHub上的报错）
@@ -85,10 +85,8 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- 使用官方的主题样式vue.css -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" title="vue">
-  <!-- 必须先引入vue.css然后再引入自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.0.0/dist/theme-liawn.min.css"
+  <!-- 自定义主题css //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.css"
     type="text/css" />
   <!-- 网站页签图标 -->
   <link rel="shortcut icon" href="public/image/favicon.ico" type="image/x-icon" />
@@ -114,9 +112,10 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
         '/.*/_navbar.md': '/_navbar.md'
       },
       relativePath: true, // 启用相对路径
-      topMargin: 55, // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间，一般顶部有导航栏就会用到这个
+      topMargin: 55, // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间
       mergeNavbar: true,  // 小屏设备下合并导航栏到侧边栏
       auto2top: true, // 切换页面后是否自动跳转到页面顶部
+      onlyCover: true, // 让封面单独出现，封面滑动在移动端效果并不好，所有固定onlyCover为true
       // search.min.js插件
       search: {
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
@@ -134,8 +133,6 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
         tabComments: true,
         tabHeadings: true
       },
-      // 其他插件
-      plugins: [],
     }
     // 离线也能查看
     if (typeof navigator.serviceWorker !== 'undefined') {
@@ -144,8 +141,6 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <!-- 自定义主题 //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
-  <script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.0.0/dist/theme-liawn.min.js"></script>
   <!-- 全文搜索 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <!-- 代码复制 -->
@@ -154,6 +149,8 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!-- 标签展示 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <!-- 自定义主题 //cdn.jsdelivr.net/gh/用户名/仓库名@版本/文件夹/文件名 -->
+  <script src="//cdn.jsdelivr.net/gh/liawnliu/docsify-theme-liawn@v1.1.0/dist/theme-liawn.min.js"></script>
 </body>
 
 </html>
@@ -161,9 +158,8 @@ ProjectName（例如blog，也可以是xxx-react，只要保证docs是真正的�
 
 有几个注意点：
 
-- 必须要先引入vue.css，再引入theme-liawn.min.css，因为vue.css才是主要的样式，theme-liawn.min.css只是覆盖了某些样式并新增了一些样式。
-- 我们开启了封面、侧边栏、导航栏功能，如果你自己的文档项目没有开这些功能，我们的theme-liawn主题的js运行会报错的（但关闭了右上角的挂件repo，暂时没有做repo的适配）。公共资源要放在docs/public里。最好是在docs/public/image里准备一个bgPhone.png，用于移动端封面展示。
+- 我们开启了封面、侧边栏、导航栏功能，如果你自己的文档项目没有开这些功能，我们的theme-liawn主题的是默认强制开启的。公共资源要放在docs/public里。
 - 因为我们将搜索栏、博客名、导航栏放到了顶部的header里，并且固定是55px，所以配置中加了`topMargin: 55`。移动端的header展示为了更友好，我们设置了`mergeNavbar: true`。
 - 左侧侧边栏的配置就不要变动，原因是我们将当前展示的文章标题抽到了**右侧侧边栏**了，原先是出现在左侧的。
 
-按照以上的项目结构和一些配置，**基本能正常使用theme-liawn了**。
+**按照以上的项目结构和一些配置**，基本能正常使用theme-liawn了。
