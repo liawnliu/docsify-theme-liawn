@@ -1,0 +1,133 @@
+/****** 头部 开始 ******/
+header {
+    display: flex;
+    position: fixed;
+    z-index: 999999;
+    width: 100vw;
+    height: var(--appNavHeight, 55px);
+    background-color: inherit;
+	border: 1px solid var(--borderColor);
+	box-shadow: 0 2px 4px 0 var(--borderColor);
+}
+/* 左上角博客名 */
+header > h1 {
+    flex: 0.1 0.2 auto;
+    max-width: var(--sidebarWidth);
+    min-width: 110px;
+    padding-left: 10px;
+    margin: 0;
+	font-size: 25px;
+    line-height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+header > h1 a {
+	color: var(--series,#42b983);
+	text-decoration: none;
+}
+/* 搜索栏 */
+.theme-liawn-search {
+    flex: 1 1 auto;
+    border-bottom: unset !important;
+}
+.theme-liawn-search .input-wrap {
+    position: relative;
+    display: block !important;
+    max-width: 250px;
+    min-width: 110px;
+    margin-left: 0;
+    margin-right: auto;
+}
+.theme-liawn-search .results-panel {
+    overflow-y: auto;
+    height: calc(100vh - var(--appNavHeight));
+    background: var(--searchResultBg, #ebebeb);
+    z-index: 20;
+}
+.theme-liawn-search input {
+    border: 1px solid var(--searchResultBg, #ebebeb) !important;
+    background: var(--searchBg, #eeeeee);
+    border-radius: 20px;
+    padding-left: 15px !important;
+    padding-right: 25px !important;
+}
+.theme-liawn-search input:focus {
+    border: 1px solid var(--series, #42b983)  !important;
+    box-shadow: 10px var(--series, #42b983)  !important;
+    background: var(--searchFocusBg, #fff);
+}
+.theme-liawn-search .clear-button {
+    position: absolute;
+    right: 2px;
+    top: 8px;
+}
+/* 导航栏 */
+.app-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 auto;
+    margin: 10px;
+}
+.app-nav > ul > li {
+    display: inline-block;
+    position: relative;
+    margin: 0 7px;
+}
+.app-nav > ul > li:hover ul {
+	display:block
+}
+.app-nav > ul > li > ul {
+    position: absolute;
+    display:none;
+	border:1px solid;
+	border-color:#ddd #ddd #ccc;
+	border-radius:4px;
+    background-color: var(--background, #fdfdfd);
+	max-height:calc(100vh - 61px);
+	overflow-y:auto;
+	padding: 10px 0;
+	right:0;
+	white-space:nowrap;
+	font-size:16px;
+}
+.app-nav > ul > li > ul li {
+    max-width: 170px;
+    margin: 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+.app-nav a {
+	color:inherit;
+	text-decoration:none;
+	transition:color .3s
+}
+.app-nav a.active, .app-nav a:hover {
+	color:var(--series,#42b983)
+}
+.app-nav a.active {
+	border-bottom:2px solid var(--series,#42b983)
+}
+.app-nav li ul a {
+	font-size: 14px;
+}
+.app-nav li ul a.active {
+	border-bottom:0
+}
+/* 主题切换按钮 */
+.switch-btn {
+    flex: 0 0 25px;
+    height: 25px;
+    margin: 15px;
+    cursor: pointer;
+}
+/* git按钮 */
+.github-corner svg {
+	color:var(--background);
+	fill:var(--series,#42b983);
+	height:var(--appNavHeight);
+	width:var(--appNavHeight);
+}
+/****** 头部 结束 ******/

@@ -1,0 +1,122 @@
+/****** 左侧侧边栏 开始 ******/
+.sidebar {
+	position: fixed;
+	top:var(--appNavHeight, 55px);
+	bottom:0;
+	left:0;
+    width: var(--sidebarWidth, 250px);
+    height: calc(100vh - var(--appNavHeight, 55px));
+	overflow-y:auto;
+	transition: left .25s ease-out;
+	z-index:20;
+    background-color: var(--sidebarBg, #f7f7f7);
+	border-right:1px solid rgba(0,0,0,.07);
+}
+.sidebar-nav > h1 {
+	margin:0.5rem auto 0.5rem;
+	font-size:1.5rem;
+	font-weight:500;
+	text-align:center
+}
+.sidebar h1 a { color: var(--sidebarTextColor); }
+.sidebar .sidebar-nav {
+	line-height:2em;
+	padding-bottom:40px
+}
+.sidebar li.collapse .app-sub-sidebar {
+	display:none
+}
+.sidebar ul {
+    margin-bottom: 10px;
+    margin-left: 22px;
+}
+.sidebar li {
+    margin: 4px 0;
+}
+.sidebar li>p {
+    font-size: 1.2rem;
+    color: var(--sidebarTextColor);
+}
+.sidebar ul li a {
+    font-size: 1rem;
+    border-bottom: none;
+    color: var(--sidebarTextColor);
+}
+.sidebar::-webkit-scrollbar {
+	width:4px
+}
+.sidebar::-webkit-scrollbar-thumb {
+	background:transparent;
+	border-radius:4px
+}
+.sidebar:hover::-webkit-scrollbar-thumb {
+	background:hsla(0,0%,53.3%,.4)
+}
+.sidebar:hover::-webkit-scrollbar-track {
+	background:hsla(0,0%,53.3%,.1)
+}
+.sidebar-toggle {
+	position:fixed;
+	bottom:0;
+	left:0;
+	padding:10px;
+    width: var(--sidebarWidth, 250px);
+    background-color: var(--sidebarBg, #f7f7f7);
+	border:0;
+	outline:none;
+	text-align:center;
+    opacity: .8;
+	transition:opacity .3s;
+	z-index:30;
+	cursor:pointer;
+}
+.sidebar-toggle span {
+	background-color:var(--series,#42b983);
+	display:block;
+	margin-bottom:4px;
+	width:16px;
+	height:2px
+}
+/* 点击左侧侧边栏底部的按钮 */
+body.close .sidebar {
+	left: calc(var(--sidebarWidth) * (-1))
+}
+body.close .sidebar-toggle {
+	width:auto
+}
+body.close .content {
+	left:0
+}
+/* 移动端的nav会放到sidebar */
+.sidebar nav {
+    margin-top: 10px;
+    border-bottom: 4px solid var(--borderColor);
+}
+.sidebar nav > ul > li ul {
+    display: none;
+}
+.sidebar nav a {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+.sidebar-nav > ul {
+    margin-left: 10px;;
+}
+.sidebar ul li.active {
+	border-right: 2px solid var(--series, #42b983);
+}
+.sidebar ul li.active > a {
+	color: var(--series, #42b983);
+	font-weight: 600;
+  }
+/* 章节名前面的箭头 */
+.sidebar-nav li::before {
+    /* 在li里添加data-content-before属性，让这个属性的值为箭头 */
+    content: attr(data-content-before);
+    float: left;
+    margin-left: -14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--strongTextColor, #42b983);
+}
+/****** 左侧侧边栏 结束 ******/

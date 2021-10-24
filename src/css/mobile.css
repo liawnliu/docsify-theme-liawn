@@ -1,0 +1,18 @@
+@media screen and (max-width:768px){
+    .theme-liawn-search .results-panel {
+        position: fixed;
+        top: var(--appNavHeight);
+        left: 0;
+		width: 100vw;
+    }
+    header > h1 { font-size: 18px; }
+    .content { right: 0; left: 0; }
+    /* 由于docsify在移动端添加了一个body点击事件关闭sidebar
+        所以这里得事先隐藏sidebar，也就是与PC端相反的状态 */
+    .sidebar { left: calc(var(--sidebarWidth) * (-1)); }
+	/* 5px是right正常情况的值，所以要减去5px */
+    .aside-float{ right: calc(var(--fTocWidth, 250px) * (-1) - 5px) !important; }
+    body.close .sidebar { left: 0; }
+    body.close-float-toc .aside-float { right: 5px !important; }
+	.sidebar-toggle, .toc-btn { width: 38px !important; }
+}
