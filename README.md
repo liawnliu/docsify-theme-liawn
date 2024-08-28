@@ -1,5 +1,9 @@
 # 如何使用docsify-theme-liawn
 
+## 重点说明
+
+本人博客不再使用docsify了，我个人推荐使用[vitepress](https://vitepress.dev/zh/)来搭建博客，我的博客项目是[blog-liawn](https://github.com/liawnliu/blog-liawn)
+
 ## 通过cdn引入来使用docsify-theme-liawn
 
 ```html
